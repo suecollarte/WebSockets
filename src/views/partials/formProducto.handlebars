@@ -1,0 +1,26 @@
+<!---formulario producto --->
+
+<h1 style ="color:blue">Ingrese Productos formulario</h1>
+
+<form action ="javascript:addProductoClient() "
+ method="post" id="form1">
+
+    <div class="form-group">
+        <label for="codigo">Codigo</label>
+        <input id="codigo" class="form-control" type="text" name="codigo">
+    </div>
+    <div class="form-group">
+        <label for="description">Descripcion</label>
+        <input id="description" class="form-control" type="text" name="description">
+    </div>
+    <button class="btn btn-warning" id="btn" type="submit">Enviarse</button>
+</form>
+<form action ="javascript:borraProductoClient() "
+ method="post" id="form1">
+
+    <div class="form-group">
+        <label for="codigo">Codigo</label>
+        <input id="codigo" class="form-control" type="text" name="codigo">
+    </div>
+    <button class="btn btn-warning" id="btn1" type="submit">Borrar</button>
+</form>

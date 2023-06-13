@@ -1,0 +1,42 @@
+[
+  {
+    "id": 0,
+    "idCliente": 200,
+    "producto": [
+      {
+        "id": 3,
+        "idproducto": 452
+      }
+    ]
+  },
+  {
+    "idCliente": 201,
+    "producto": [
+      {
+        "id": 0,
+        "idproducto": 411
+      }
+    ],
+    "id": 2
+  },
+  {
+    "idCliente": 201,
+    "producto": [
+      {
+        "id": 0,
+        "idproducto": 412
+      }
+    ],
+    "id": 3
+  },
+  {
+    "idCliente": 201,
+    "producto": [
+      {
+        "id": 0,
+        "idproducto": 5
+      }
+    ],
+    "id": 4
+  }
+]
