@@ -2,8 +2,7 @@
 
 <h1 style ="color:blue">Ingrese Productos formulario</h1>
 
-<form action ="javascript:addProductoClient() "
- method="post" id="form1">
+<form id="form1">
 
     <div class="form-group">
         <label for="codigo">Codigo</label>
@@ -13,14 +12,14 @@
         <label for="description">Descripcion</label>
         <input id="description" class="form-control" type="text" name="description">
     </div>
-    <button class="btn btn-warning" id="btn" type="submit">Enviarse</button>
+    <button class="btn btn-warning" id="btn" type="submit">Crear</button>
 </form>
-<form action ="javascript:borraProductoClient() "
- method="post" id="form1">
+<h2>Borrado</h2>
+<form id="form2">
 
     <div class="form-group">
         <label for="codigo">Codigo</label>
-        <input id="codigo" class="form-control" type="text" name="codigo">
+        <input id="codigodel" class="form-control" type="text" name="codigodel">
     </div>
     <button class="btn btn-warning" id="btn1" type="submit">Borrar</button>
 </form>

@@ -1,43 +1,20 @@
 const socket = io()
+
+
 //DOM element
-let chatbot =document.getElementById('chatbot')
+//let chatbot =document.getElementById('chatbot')
 let listaProducto =document.getElementById('listaProducto')
-let addProducto =document.getElementById('addProducto')
+let addProducto =document.getElementById('form1')
+let delProducto =document.getElementById('form2')
 
 
-/* chatbot.addEventListener('keyup', evt => {
+addProducto.addEventListener('submit', evt => {
     //console log de un front
   socket.emit('message', evt.key)
-  if (evt.key === 'Enter'){
-      socket.emit('message-desde', chatbot.value)
-  }   
   
-}) */
-
-listaProducto.addEventListener('keyup', evt => {
-      //console log de un front
-    //socket.emit('message', evt.key)
-    if (evt.key === 'Enter'){
-        socket.emit('message-desde', chatbot.value)
-    }   
-    
-})
-
-socket.on("listaProducto", function (data) {
-
-   let htmlCuerpo ='<div class="container"><div class="row align-items-start"><div class="col">Id</div><div class="col">Descripcion</div></div>'
-   for (const key in data) {
-    htmlCuerpo += `<div class="row"><div class="col">${data[key].id}</div><div class="col"> producto ${data[key].codigo}</div></div>`;
-       
-   };
-   htmlCuerpo += '</div>'
-   document.querySelector('#Productos').innerHTML=htmlCuerpo;
-
-})
-
-function addProductoClient(){
-
-    const codigo = document.querySelector('#codigo')
+ 
+      //socket.emit('message-desde', chatbot.value)
+      const codigo = document.querySelector('#codigo')
     const description = document.querySelector('#description')
 
     const producto={
@@ -47,9 +24,39 @@ function addProductoClient(){
      //producto nuevo
     
      socket.emit("client-addProducto", producto) 
+  
+  
+}) 
+
+/* listaProducto.getElementById('btn').addEventListener('click', evt => {
+      //console log de un front
+    //socket.emit('message', evt.key)
+    
+    
+}) */
+
+socket.on("listaProducto", function (data) {
+
+   let htmlCuerpo ='<div class="container"><div class="row align-items-start"><dt class="col">Id</dt><dt class="col">Codigo</dt><dt class="col">Descripcion</dt></div>'
+   for (const key in data) {
+    htmlCuerpo += `<div class="row"><div class="col">${data[key].id}</div><div class="col"> producto ${data[key].codigo}</div><div class="col"> producto ${data[key].description}</div></div>`;
+       
+   };
+   htmlCuerpo += '</div>'
+   document.querySelector('#Productos').innerHTML=htmlCuerpo;
+
+})
+
+delProducto.addEventListener('submit', evt => {
+
+    const codigo = document.querySelector('#codigodel')
+    const codigovalue= codigo.value
+     //producto a borrar 
+      socket.emit("client-borraProducto", codigovalue) 
      //emite hacia el servidor
     
-}
+})
+
 socket.on('history', data => {
     
     let history=document.getElementById('history');

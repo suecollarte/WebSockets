@@ -99,13 +99,13 @@ traeProductsBy = async(id) =>
     }
  }
 
- BorrarProducto = async(id) =>{
+ BorrarProducto = async(codigo) =>{
   try{
     let archivo1 =   await this.traeTodo();
     
-    archivo1 = archivo1.filter(item => item.id !=id);
-    await fs.promises.writeFil<e(this.path,JSON.stringify(archivo1,null,2));
-              
+    archivo1 = archivo1.filter(item => item.codigo !=codigo);
+    await fs.promises.writeFile(this.path,JSON.stringify(archivo1,null,2));
+           
       
   }
   catch(error){
